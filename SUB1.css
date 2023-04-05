@@ -1,0 +1,83 @@
+.filter {
+	margin-top: 0 auto;
+
+	width: 30%;
+	height: 100%;
+	background: aliceblue;
+}/*전체 크기 조정*/
+.map{
+	align-items: center;
+	position: relative;
+	margin: 0 auto;
+	margin-top: 2px;
+	max-width: 95%;
+	width: 100%;
+}/*지도*/
+.map>div{
+	width: 100%;
+	padding-bottom: 50%;
+}/*지도*/
+.map>div iframe{
+	position: absolute;
+	z-index: 1;
+	top: 0; left: 0;
+	width: 100%; height: 100%;
+}/*지도*/
+
+.filter aside{ 
+	padding-left: 3%;
+	float: left; 
+	width: 96%; 
+	height: 100%;
+	font-size: 11px;
+}/*검색 필터*/
+
+.title{
+	font-size: 2.7vh;
+	font-weight: bold;
+    font-family: 'MICEGothic Bold', sans-serif;
+    margin-top: 17%; 
+    margin-bottom: 6%;
+}/*검색 키워드? 카테고리 이름*/
+
+
+
+/*여백 설정*/
+.mar{ margin: 1vh;}
+
+/*왼쪽 카테고리 설정(시설/서비스)*/
+input[id*="answer"]{
+	display: none;
+    
+    
+}
+
+input[id*="answer"] + label {
+	display: block;
+	padding: 1px;
+
+	border-bottom: 0;
+	font-weight: 900;
+	cursor: pointer;
+	position: relative;
+    
+}
+
+input[id*="answer"] + label + div{
+	max-height: 0;
+	transition: all .35s;
+	overflow: hidden;
+	background: #ebf8ff;
+	
+
+}
+
+input [id*="anser"] + label + div p{
+	display: inline-block;
+	padding: 20px;
+}
+
+input[id*="answer"]:checked + label + div{
+	max-height: 300px
+}
+

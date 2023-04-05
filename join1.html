@@ -1,0 +1,98 @@
+<!doctype html>
+ <html lang="en">
+
+   <head>
+    <meta charset="utf-8">
+    <title>회원가입</title>
+   <link href="./joinstyle.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<!-- 회원가입 폼-->
+     <table>
+      <div id="header">
+      <li style="margin-left: 13%">
+          <h2><a href="../main.html">TRUE<span style="color:skyblue">.</span>VEL 회원가입</a></h2>
+
+              <div style="font-weight: bold; font-size: 14px">
+                
+                  * 항목은 반드시 입력해야 합니다.
+            
+         </div>
+
+          </div>
+
+      </li>
+
+      </div>
+
+
+
+
+
+         <form action="{%url 'creatuser' %}" method="POST" style="margin-top: 3%">
+       
+
+    <tr>
+        <td class="col1">이름*</td>
+        <td class="col2"><input type="text" name="name" maxlength="5" class="add"></td>
+    </tr>
+    <tr>
+        <td class="col1">아이디*</td>
+        <td class="col2">
+            <input type="text" name="id" maxlength="10" class="add">
+            <input class='but1' type="button" value="중복확인" onclick="" class="add">
+        </td>
+    </tr>
+    <tr>
+        <td class="col1">비밀번호*</td>
+        <td class="col2">
+            <input type="password" name="pwd" maxlength="16" class="add">
+            <p class="add"> ※비밀번호는 <span class="num">문자, 숫자, 특수문자(~!@#$%^&*)의 조합
+            10 ~ 16자리</span>로 입력이 가능합니다.</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="col1">비밀번호 확인*</td>
+        <td class="col2" ><input type="password" name="pwdCheck" maxlength="16" class="add"></td>
+    </tr>
+    <tr>
+        <td class="col1">이메일</td>
+        <td class="col2">
+            <input class="add" type="text" name="mailid">
+            <span class="a">@</span>
+            <input class="add" type="text" name="email">
+            <select name="mailslc">
+                <option class="add" value="self" selected>직접입력</option>
+                <option value="naver">naver.com</option>
+                <option value="gm">gmail.com</option>
+                <option value="da">daum.com</option>
+                <option value="yah">yahoo.com</option>
+            </select>
+            <input class='but2' type="button" value="이메일 중복확인" onclick="">
+        </td>
+   </tr>
+    <tr>
+        <td class="col1">자택주소</td>
+        <td class="col3">             
+               <span>
+               <input  class="add" type="text"  placeholder="우편번호">
+               <input  class="add" type="button" value="우편번호 찾기"><br>
+               </span>
+               <input class="add" type="text"  placeholder="주소"><br>
+               <input class="add" type="text"  placeholder="상세주소">
+               <input class="add" type="text" placeholder="참고항목">
+               </div>
+            </div>
+        </td>
+    </tr>
+   </table>
+  </div>
+ 
+  <div class="create">
+       <a style="text-decoration:none;" href="../main.html"> <input class="but3" type="button" value="가입취소" > </a>
+        <input class="but4" type="submit" value="회원가입" >
+  </div>
+</form>
+</body>
+</html>

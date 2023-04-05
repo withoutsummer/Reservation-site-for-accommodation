@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./subpage2.css">
+
+    <script src="https://kit.fontawesome.com/f93a846390.js" crossorigin="anonymous"></script>
+<style>
+    * {margin:0;padding:0;}
+    .section input[id*="slide"] {display:none;}
+    .section .slidewrap {max-width:97%; margin:0 auto;float: left;margin-left: 10px;}
+    .section .slidelist {white-space:nowrap;font-size:0;overflow:hidden;position:relative;float: left;}
+    .section .slidelist > li {display:inline-block;vertical-align:middle;width:100%;transition:all .5s;}
+    .section .slidelist > li > a {display:block;position:relative;}
+    .section .slidelist > li > a img {width:100%; height: 300px;}
+    .section .slidelist label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:50px;cursor:pointer;}
+    
+    /* input에 체크되면 슬라이드 효과 */
+    .section input[id="slide01"]:checked ~ .slidewrap .slidelist > li {transform:translateX(0%);}
+    .section input[id="slide02"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-100%);}
+    .section input[id="slide03"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-200%);}
+
+    /* input에 체크되면 텍스트 효과 */
+    .section input[id="slide01"]:checked ~ .slidewrap li:nth-child(1) .textbox h3 {opacity:1;transform:translateY(0);transition-delay:.2s;}
+    .section input[id="slide01"]:checked ~ .slidewrap li:nth-child(1) .textbox p {opacity:1;transform:translateY(0);transition-delay:.4s;}
+    .section input[id="slide02"]:checked ~ .slidewrap li:nth-child(2) .textbox h3 {opacity:1;transform:translateY(0);transition-delay:.2s;}
+    .section input[id="slide02"]:checked ~ .slidewrap li:nth-child(2) .textbox p {opacity:1;transform:translateY(0);transition-delay:.4s;}
+    .section input[id="slide03"]:checked ~ .slidewrap li:nth-child(3) .textbox h3 {opacity:1;transform:translateY(0);transition-delay:.2s;}
+    .section input[id="slide03"]:checked ~ .slidewrap li:nth-child(3) .textbox p {opacity:1;transform:translateY(0);transition-delay:.4s;}
+
+    /* 좌,우 슬라이드 버튼 */
+    .slide-control > div {display:none;}
+    .section .left {left:-30px;background:url('../img/left.png') center center / 70% no-repeat;}
+    .section .right {right:-20px;background:url('../img/right.png') center center / 70% no-repeat;}
+    .section input[id="slide01"]:checked ~ .slidewrap .slide-control > div:nth-child(1) {display:block;}
+    .section input[id="slide02"]:checked ~ .slidewrap .slide-control > div:nth-child(2) {display:block;}
+    .section input[id="slide03"]:checked ~ .slidewrap .slide-control > div:nth-child(3) {display:block;}
+
+    /* 페이징 */
+    .slide-pagelist {text-align:left;padding:0 180px; margin:10px;}
+    .slide-pagelist > li {display:inline-block;vertical-align:middle;}
+    .slide-pagelist > li > label {display:block;padding:5px 5px;border-radius:30px;background:#ccc;margin:3px 7px;cursor:pointer;}
+    .section input[id="slide01"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(1) > label {background:#999;}
+    .section input[id="slide02"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(2) > label {background:#999;}
+    .section input[id="slide03"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(3) > label {background:#999;}
+    </style>  
+
+
+
+    
+
+    
+    <!-- 아이콘 -->
+    <script src="https://kit.fontawesome.com/f93a846390.js" crossorigin="anonymous"></script>
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+
+    <!---스크롤 이벤트-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(function () {
+        $("#check2").hide();
+    })
+        
+    </script>
+    <!-- 헤더 스크롤 자바스크립트-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+    $(document).on('scroll', function(){
+        if($(window).scrollTop() > 50){
+            $("#check1").hide();
+            $("#check2").show();
+        }else{
+            $("#check1").show();
+            $("#check2").hide();
+        }
+    })
+});
+</script>
+
+
+ <link href="reviewstyle.css" rel="stylesheet" type="text/css">
+<script src="https://kit.fontawesome.com/f93a846390.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+</head>
+<!-- 상단 헤더-->
+<body class="main">
+<header style="position: relative; z-index: 99;">
+    <div id="check1" style="position: fixed; width: 100%; height: auto;">
+        <div  style="width: 100%; background-color: #222746; height: 60px; display: flex; justify-content: space-between; ">
+            <h2 class="c" style="margin-top: auto; margin-bottom: auto;font-size: 30px;"><a  href="../main.html">TRUE<span style="color:skyblue">.</span>VEL</a></h2>
+            <nav style="margin: 0; padding:0;">
+                <ul class="menubar">
+                <li><a href="" style="font-size: 16px; font-weight: 500;">고객센터</a></li>
+                <li><a ref="" style="font-size: 16px; font-weight: 500;">예약현황</a></li>
+                <li>
+                        <a href="../page1/login1.html" style="font-size: 16px; font-weight: 500;">로그인/회원가입</a>
+                      
+                    </li>
+                </ul>
+                </nav>
+
+        </div>
+        <div style="width: 100%; background-color: #222746; height: auto;">
+            <form style="margin-left:10%; margin-right: 8%;" action="{% url 'ser' %}" method="POST">
+                
+                <input name="location" class="sub" type="text" list="where"  placeholder="장소" style="margin-top: 2%; margin-bottom: 2%; border-radius: 10px 0px 0px 10px;" >
+                <datalist id="where">
+                    <option value=서울>
+                    <option value=경기>
+                    <option value=인천>
+                    <option value=강원>
+                    <option value=제주>
+                    <option value=대전>
+                    <option value=충북>
+                    <option value=충남>
+                    <option value=부산>
+                    <option value=울산>
+                    <option value=경남>
+                    <option value=대구>
+                    <option value=경북>
+                    <option value=광주>
+                    <option value=전남>
+                    <option value=전북>
+                </datalist>
+                <input style="margin-left:-6px" class="sub" type="text" list="people" placeholder="인원수">
+                <datalist id="people">
+                    <option value=1인>
+                    <option value=2인>
+                    <option value=3인>
+                    <option value=4인>
+                    <option value=5인이상>
+                
+        
+                </datalist>
+                <input type="date" class="sub" required data-placeholder="시작 날짜" requiredaria-required="true" style="margin-left:-6.5px; height: 7vh;" >
+                <input type="date" class="sub" required data-placeholder="종료 날짜" requiredaria-required="true" style="margin-left:-6.5px; height: 7vh;" >
+                <input name="textfld" class="sub"  type="text" style="margin-left:-6px; width: 18%; text-indent:10px;" placeholder="키워드(EX: 바다)">
+                <input type="submit" value="변경하기" class="sub top" style="margin-left:-6px; height: 7.3vh; border-radius: 0px 10px 10px 0px;">
+            </form>
+
+        </div>
+        
+
+    </div>
+    <div id="check2" style="width: 100%; background-color: #222746; height: auto; position: fixed; top: 0%;">
+        <form style="margin-left:8%; margin-right: 8%;" action="{% url 'ser' %}" method="POST">
+            
+            <input name="location" class="sub" type="text"   list="where" placeholder="장소" style="margin-top: 2%; margin-bottom: 2%; border-radius: 10px 0px 0px 10px " >
+            <datalist id="where">
+                <option value=서울>
+                <option value=경기>
+                <option value=인천>
+                <option value=강원>
+                <option value=제주>
+                <option value=대전>
+                <option value=충북>
+                <option value=충남>
+                <option value=부산>
+                <option value=울산>
+                <option value=경남>
+                <option value=대구>
+                <option value=경북>
+                <option value=광주>
+                <option value=전남>
+                <option value=전북>
+            </datalist>
+            <input style="margin-left:-6px" class="sub" type="text" list="people" placeholder="인원수">
+            <datalist id="people">
+                <option value=1인>
+                <option value=2인>
+                <option value=3인>
+                <option value=4인>
+                <option value=5인이상>
+            
+    
+            </datalist>
+            <input type="date" class="sub" required data-placeholder="시작 날짜" requiredaria-required="true" style="margin-left:-6px; height: 7vh; " >
+            <input type="date" class="sub" required data-placeholder="종료 날짜" requiredaria-required="true" style="margin-left:-6px; height: 7vh;" >
+            <input name="textfld" class="sub"  type="text" style="margin-left:-6px; width: 18%; text-indent:10px;" placeholder="키워드(EX: 바다)">
+            <input type="submit" value="변경하기" class="sub top" style="margin-left:-6px; height: 7.3vh; border-radius: 0px 10px 10px 0px; ">
+        </form>
+    </div>
+    </header>
+    </body>
+<!--상세 페이지 구현-->
+    <body style="min-height: 100%;" >
+    <div class="container">
+    <div class="lodging">
+        <p style="font-size:13px; margin:9px 10px 5px;">홈 < 호텔 < 제주 < 그랜드 하얏트 제주 (Grand Hyatt Jeju)
+        <div class="mainfont" align="right" style="width: 700px; height: 300px; float: right;overflow: hidden;" >
+                <div style="font-size:33px;top: 20%; float: left;font-weight: 700;">그랜드 하얏트 제주 (Grand Hyatt Jeju)</div>
+                <div style="margin-left: 2px; float:left; position: absolute;margin-top: 47px;font-size: 13px;"><i class="fa-solid fa-location-dot" style="font-size: 15px;color: skyblue;padding: 3px 1px 0;"></i> 대한민국 제주도 제주 노연로 12 63082 <a href="" style="color:skyblue;font-weight: 600;">지도보기</a>
+                    <br>
+                    <p style="float:left; font-size:22px;margin-top: 20px;font-weight: 
+                    500;color:grey;"> #깨끗한 #고급스러운 #편안한 </p>
+                    <br>
+                    <p style=" float:left; padding:5px;margin-top: 108px;">이용객 평점(<a href="" style="color:rgba(42, 123, 236, 0.8);font-weight: 600;">후기 147개</a>)</p><br>
+                    <p class="grade" style="font-size:30px;margin: 135px -117px;font-weight: bold; float:left;">4.7 / 5</p></div>
+                <div style="float: right; padding: 0px 10px;display: inline-block;width: 400px;margin-top: 188px;"><div style="display: inline-block;margin-top:18px;margin-left: 22px; font-size: 35px;font-weight: 700;">468,000원~</div> 
+                <div class="btn"><button class="custom-btn btn-15">예약하기</button></div></div>
+            </div>
+        <div class="section">
+        <input type="radio" name="slide" id="slide01" checked>
+        <input type="radio" name="slide" id="slide02">
+        <input type="radio" name="slide" id="slide03">
+        <div class="slidewrap">
+            <ul class="slidelist" >
+            <!-- 슬라이드 영역 -->
+
+                <li class="slideitem">
+                    <a>
+                        <img src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2022/03/16/2321/CJUGH-P039-Exterior-Wide-View.jpg/CJUGH-P039-Exterior-Wide-View.16x9.jpg">
+                    </a>
+                </li>
+                <li class="slideitem">
+                    <a>
+                        <img src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2021/03/15/0226/CJUGH-P0224-Steak-House.jpg/CJUGH-P0224-Steak-House.4x3.jpg">
+                    </a>
+                </li>
+                <li class="slideitem">
+                    <a>
+                        <img src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2021/04/01/0314/CJUGH-P0232-Corner-Suite-Living-Room-Main-Visual.jpg/CJUGH-P0232-Corner-Suite-Living-Room-Main-Visual.16x9.jpg?imwidth=1280">
+                    </a>
+                </li class="slideitem">
+
+                <!-- 좌,우 슬라이드 버튼 -->
+                <div class="slide-control">
+                    <div>
+                        <label for="slide03" class="left"></label>
+                        <label for="slide02" class="right"></label>
+                    </div>
+                    <div>
+                        <label for="slide01" class="left"></label>
+                        <label for="slide03" class="right"></label>
+                    </div>
+                    <div>
+                        <label for="slide02" class="left"></label>
+                        <label for="slide01" class="right"></label>
+                    </div>
+                </div>
+            </ul>
+
+            <!-- 페이징 -->
+            <ul class="slide-pagelist">
+                <li><label for="slide01"></label></li>
+                <li><label for="slide02"></label></li>
+                <li><label for="slide03"></label></li>
+            </ul>
+        </div>  
+    </div>
+    <hr>
+    <div class="sub1"><p><i class="fa-solid fa-shield-virus"></i><strong> 안심호텔 </strong><br> 보건/안전 조치가 8건이 실행됩니다. <a href="" style="color: skyblue;">더보기</a></p></div>
+    <hr>
+    <div class="room" id="room1"><img src="http://www.shinailbo.co.kr/news/photo/201804/1059684_364445_1324.jpg" align="left">
+    <h3>65m2 트윈 룸</h3>
+    <p class="service"><i class="fa-solid fa-stairs"></i> 5-16층 <i class="fa-solid fa-couch"></i> 소파 <i class="fa-solid fa-shower"></i> 샤워실 및 샤워부스 <i class="fa-solid fa-martini-glass"></i> 미니 바 <a href="" style="color:skyblue;">서비스 더보기</a></p>
+    <br>
+    <div class="info"><i class="fa-solid fa-user" style="font-size:25px;padding: 7px 4px 0 0;"></i><i class="fa-solid fa-user" style="font-size:25px;padding: 20px 4px 0 0;"></i> 2인실</div>
+
+    <div class="reserv">468,000원&nbsp;<p style="font-size:12px;width: 150px;color: skyblue;margin: 0 2px 5px 30px;">1박당 객실 요금(세금 포함)</p>
+    <div>
+        <button class="custom-btn btn-15" style="padding:0;margin: 0 10px 50px 10px;float: right;">예약하기</button>
+    </div></div>
+    </div><hr>
+    <div class="room" id="room2"><img src="https://api.cdn.visitjeju.net/photomng/imgpath/202104/23/0473b4f9-26de-46e1-b119-8e5693f5bc88.jpg" align="left">
+    <h3>130m2 그랜드 스위트 트윈</h3>
+    <p class="service"><i class="fa-solid fa-stairs"></i> 5-16층 <i class="fa-solid fa-couch"></i> 소파 <i class="fa-solid fa-shower"></i> 샤워실 <i class="fa-solid fa-bath"></i> 샤워부스 <i class="fa-solid fa-martini-glass"></i> 미니 바 <a href="" style="color:skyblue;">서비스 더보기</a></p>
+    <br>
+    <div class="info"><i class="fa-solid fa-user" style="font-size:25px;padding: 7px 4px 0 0;"></i><i class="fa-solid fa-user" style="font-size:25px;padding: 20px 4px 0 0;"></i><i class="fa-solid fa-user" style="font-size:25px;padding: 20px 4px 0 0;"></i>  3인실</div>
+
+    <div class="reserv" style="float: left;">1,125,000원&nbsp;<p style="font-size:12px;width: 150px;color: skyblue;margin: 0 2px 5px 30px;">1박당 객실 요금(세금 포함)</p>
+    <div>
+        <button class="custom-btn btn-15" style="padding:0;margin: 0 10px 50px 10px;float: right;">예약하기</button>
+    </div></div></div><hr>
+    <div class="room" id="room3"><img src="https://post-phinf.pstatic.net/MjAyMTA0MjJfMTE2/MDAxNjE5MDcyNzM0ODU1.a8xQtfTE3RJdY_bRK7Ngd-rRdmmLVRzUYPXkZ-Xk4R4g.lEpyVyHsDYzWaKZp1CMplCQ0uh92Qm40F1onehp1fuQg.JPEG/173443900_554411519281853_2199599806129653719_n.jpg?type=w1200" align="left">
+    <h3>130m2 스위트 트윈 마우틴뷰</h3>
+    <p class="service"><i class="fa-solid fa-stairs"></i> 5-16층 <i class="fa-solid fa-couch"></i> 소파 <i class="fa-solid fa-shower"></i> 샤워실 <i class="fa-solid fa-bath"></i> 샤워부스 <i class="fa-solid fa-martini-glass"></i> 미니 바 <a href="" style="color:skyblue;">서비스 더보기</a></p>
+    <br>
+    <div class="info"><i class="fa-solid fa-user" style="font-size:25px;padding: 7px 4px 0 0;"></i><i class="fa-solid fa-user" style="font-size:25px;padding: 20px 4px 0 0;"></i> 2인실</div>
+
+    <div class="reserv">953,700원&nbsp;<p style="font-size:12px;width: 150px;color: skyblue;margin: 0 2px 5px 30px;">1박당 객실 요금(세금 포함)</p>
+    <div>
+        <button class="custom-btn btn-15" style="padding:0;margin: 0 10px 50px 10px;float: right;">예약하기</button>
+    </div></div></div><hr>
+    <div class="room" id="room4"><img src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2021/04/01/0314/CJUGH-P0236-Diplomatic-Suite-Bedroom-2.jpg/CJUGH-P0236-Diplomatic-Suite-Bedroom-2.16x9.jpg?imwidth=1280" align="left">
+    <h3>65m2 킹 룸 오션뷰</h3>
+    <p class="service"><i class="fa-solid fa-stairs"></i> 5-16층 <i class="fa-solid fa-couch"></i> 소파 <i class="fa-solid fa-shower"></i> 샤워실 <i class="fa-solid fa-martini-glass"></i> 미니 바 <a href="" style="color:skyblue;">서비스 더보기</a></p>
+    <br>
+    <div class="info"><i class="fa-solid fa-user" style="font-size:25px;padding: 7px 4px 0 0;"></i><i class="fa-solid fa-user" style="font-size:25px;padding: 20px 4px 0 0;"></i> 2인실</div>
+
+    <div class="reserv">528,300원&nbsp;<p style="font-size:12px;width: 150px;color: skyblue;margin: 0 2px 5px 30px;">1박당 객실 요금(세금 포함)</p>
+    <div>
+        <button class="custom-btn btn-15" style="padding:0;margin: 0 10px 50px 10px;float: right;">예약하기</button>
+    </div></div></div>
+</div>
+
+
+
+<hr>
+
+<!-- 리뷰 -->
+
+<div class="review">
+     <table>
+
+
+      <div class="reviewtitle"><h3 style="font-size: 30px;">호텔 리뷰</h3><br><br><h4>전체 평점</h4>&nbsp;<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <span class="fa fa-star checked" style="font-size:22px;"></span>
+      <span class="fa fa-star checked" style="font-size:22px;"></span>
+      <span class="fa fa-star checked" style="font-size:22px;"></span>
+      <span class="fa fa-star checked" style="font-size:22px;"></span>
+      <span class="fa fa-star" style="font-size:22px; color: silver;"></span></caption>
+      <span style="font-size: 25px; font-weight: bold;color: skyblue;">4.7</span> 
+
+        <tr>
+        <td class="col1">
+          <img src="https://th.bing.com/th/id/R.8a68c55fbf6c2c07f33f77c62daf454d?rik=te6VIkWCfloBpg&riu=http%3a%2f%2f1.gravatar.com%2favatar%2fa95e78cd489351757caf4c153ffe6644%3fs%3d75%26d%3didenticon%26r%3dg&ehk=ChBsbWFWm8pBv%2bG%2bAhbuSpNapWVlDvA4QBsJTnfELC4%3d&risl=&pid=ImgRaw&r=0" alt="사람모양" width="30%" height="30%" align="left"><br>
+          <font size="2em" color="black">&nbsp;&nbsp;리뷰어</font><br><br><br>
+
+          <i class="fa-solid fa-calendar-days"></i><font size="2em" color="gray"style="font-weight: lighter;">&nbsp;투숙일: 2022년 7월</font><br>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+
+
+        </td>
+        <td class="col2"><font size="2em" color="black">위치 부대시설 침구 모든부분 완벽했습니다 다음에 또온다면 다시한번 예약하고 싶은곳입니다 호텔안에 거의모든 부대시설이 다있어서 어디 따로 이동하지 않아도 호텔에서 해결가능합키다. 직원분들 역시 친절합니다. 하루 잘 보내고 갑니다.</font><br><font size="2em" color="silver">작성일: 2022년 7월 18일</font><br><br>
+          <img src="https://ak-d.tripcdn.com/images/020702224rw4l011s5771_R_150_150_R5_Q70_D.jpg"  width="15%" height="15%" align="left">
+        </td>
+
+    </tr>
+
+    <tr>
+        <td class="col1">
+          <img src="https://th.bing.com/th/id/R.8a68c55fbf6c2c07f33f77c62daf454d?rik=te6VIkWCfloBpg&riu=http%3a%2f%2f1.gravatar.com%2favatar%2fa95e78cd489351757caf4c153ffe6644%3fs%3d75%26d%3didenticon%26r%3dg&ehk=ChBsbWFWm8pBv%2bG%2bAhbuSpNapWVlDvA4QBsJTnfELC4%3d&risl=&pid=ImgRaw&r=0" alt="사람모양" width="30%" height="30%" align="left"><br>
+          <font size="2em" color="black">&nbsp;&nbsp;travel1oo4</font><br><br><br>
+
+          <i class="fa-solid fa-calendar-days"></i><font size="2em" color="gray"style="font-weight: lighter;">&nbsp;투숙일: 2022년 5월</font><br>
+          <span class="fa fa-star checked"  style="font-size:17px;"></span>
+          <span class="fa fa-star checked" style="font-size:17px;"></span>
+          <span class="fa fa-star checked" style="font-size:17px;"></span>
+          <span class="fa fa-star checked" style="font-size:17px;"></span>
+          <span class="fa fa-star checked" style="font-size:17px;"></span>
+
+
+        </td>
+        <td class="col2"><font size="2em" color="black">정말 넓고 새로 생긴 호텔이라 엄청 깔끔했어요! 서비스에 별 4개를 준 이유는 다 좋았는데, 청소하시면서 실수로 개인 소지품을 버리셔서요 ㅠㅠ 쓰레기통에서 찾아내긴 했지만 정말 당황스러웠습니다. 그 외에 시설면에선 모두 만족스러웠어오 !</font><br><font size="2em" color="silver">작성일: 2022년 5월 8일</font><br><br>
+          <img src="https://ak-d.tripcdn.com/images/0203t2215bhy2jiep0A75_R_150_150_R5_Q70_D.jpg"  width="15%" height="15%" align="left">
+          <img src="https://ak-d.tripcdn.com/images/0200722347ooepg5u23B9_R_150_150_R5_Q70_D.jpg"  width="15%" height="15%" align="left">
+          <img src="https://ak-d.tripcdn.com/images/020192215bhy2kspc9EFE_R_150_150_R5_Q70_D.jpg"  width="15%" height="15%" align="left">
+          <img src="https://ak-d.tripcdn.com/images/020502224rlb8o70gBCBD_R_150_150_R5_Q70_D.jpg"  width="15%" height="15%" align="left">
+          <img src="https://ak-d.tripcdn.com/images/0201o22347ooerdlsB2EA_R_150_150_R5_Q70_D.jpg"  width="15%" height="15%" align="left">
+
+        </td>
+    </tr>
+
+    <tr>
+        <td class="col1">
+          <img src="https://th.bing.com/th/id/R.8a68c55fbf6c2c07f33f77c62daf454d?rik=te6VIkWCfloBpg&riu=http%3a%2f%2f1.gravatar.com%2favatar%2fa95e78cd489351757caf4c153ffe6644%3fs%3d75%26d%3didenticon%26r%3dg&ehk=ChBsbWFWm8pBv%2bG%2bAhbuSpNapWVlDvA4QBsJTnfELC4%3d&risl=&pid=ImgRaw&r=0" alt="사람모양" width="30%" height="30%" align="left"><br>
+          <font size="2em" color="black">&nbsp;&nbsp;LEE</font><br><br><br>
+
+          <i class="fa-solid fa-calendar-days"></i><font size="2em" color="gray" style="font-weight: lighter;">&nbsp;투숙일: 2022년 5월</font><br>
+          <span class="fa fa-star checked" style="font-size:17px;"></span>
+          <span class="fa fa-star checked" style="font-size:17px;"></span>
+          <span class="fa fa-star checked" style="font-size:17px;"></span>
+          <span class="fa fa-star checked" style="font-size:17px;"></span>
+          <span class="fa fa-star" style="font-size:17px; color: silver;"></span>
+
+
+        </td>
+        <td class="col2"><font size="2em" color="black">3박4일 머물렀는데 제주시 한복판이라 공항에 가까워 너무 편했습니다. 시설도 깔끔하고 친절하고 너무 잘 쉬다 갑니다. 다만, 제주의 정취를 만끽하기엔 시내에 있다보니 좀 아쉬웠습니다.</font><br><br><font size="2em" color="silver">작성일: 2022년 5월 8일</font><br><br>
+          <img src="https://ak-d.tripcdn.com/images/0201y2215awlc92s23BCB_R_150_150_R5_Q70_D.jpg"  width="15%" height="15%" align="left">
+          <img src="https://ak-d.tripcdn.com/images/0206d223473bof88w8FA2_R_150_150_R5_Q70_D.jpg"  width="15%" height="15%" align="left">
+        </td>
+    </tr>
+
+    <tr>
+        <td class="col1">
+          <img src="https://th.bing.com/th/id/R.8a68c55fbf6c2c07f33f77c62daf454d?rik=te6VIkWCfloBpg&riu=http%3a%2f%2f1.gravatar.com%2favatar%2fa95e78cd489351757caf4c153ffe6644%3fs%3d75%26d%3didenticon%26r%3dg&ehk=ChBsbWFWm8pBv%2bG%2bAhbuSpNapWVlDvA4QBsJTnfELC4%3d&risl=&pid=ImgRaw&r=0" alt="사람모양" width="30%" height="30%" align="left"><br>
+          <font size="2em" color="black">&nbsp;&nbsp;박예린</font><br><br><br>
+
+          <i class="fa-solid fa-calendar-days"></i><font size="2em" color="gray"style="font-weight: lighter;">&nbsp;투숙일: 2022년 4월</font><br>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+
+
+        </td>
+        <td class="col2"><font size="2em" color="black">코너스위트 오션뷰 이용하였습니다 젤 큰방을 이용했죠 근데 서비스 응대가 너무 별로였네요 첫 방문이라 뭐가 어딘줄 모르는 상태인데 체크인 후 엘레베이터 이용하는것도 안내 안해주시고 그냥 눈에 보이는 엘베 탓다가 배정 받은 층수에 가지 않는 엘베여서 여러번 갈아탓네요 그래도 나머지는 다 만족했습니다</font><br><br><font size="2em" color="silver">작성일: 2022년 4월 20일</font><br><br>
+          <img src="https://ak-d.tripcdn.com/images/0206n22346w7dj0oyEF88_R_150_150_R5_Q70_D.jpg"  width="15%" height="15%" align="left">
+
+        </td>
+    </tr>
+
+    <tr>
+        <td class="col1">
+          <img src="https://th.bing.com/th/id/R.8a68c55fbf6c2c07f33f77c62daf454d?rik=te6VIkWCfloBpg&riu=http%3a%2f%2f1.gravatar.com%2favatar%2fa95e78cd489351757caf4c153ffe6644%3fs%3d75%26d%3didenticon%26r%3dg&ehk=ChBsbWFWm8pBv%2bG%2bAhbuSpNapWVlDvA4QBsJTnfELC4%3d&risl=&pid=ImgRaw&r=0" alt="사람모양" width="30%" height="30%" align="left"><br>
+          <font size="2em" color="black">&nbsp;&nbsp;김종선</font><br><br><br>
+
+          <i class="fa-solid fa-calendar-days"></i><font size="2em" color="gray"style="font-weight: lighter;">&nbsp;투숙일: 2022년 6월</font><br>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star" style="font-size:17px; color: silver;"></span>
+          <span class="fa fa-star" style="font-size:17px; color: silver;"></span>
+
+
+        </td>
+        <td class="col2"><font size="2em" color="black">호텔 시설은 최고인데 허비스는? 업그레이드 강요는 지나친듯~~~</font><br><br><font size="2em" color="silver">작성일: 2022년 7월 1일</font>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td class="col1">
+          <img src="https://th.bing.com/th/id/R.8a68c55fbf6c2c07f33f77c62daf454d?rik=te6VIkWCfloBpg&riu=http%3a%2f%2f1.gravatar.com%2favatar%2fa95e78cd489351757caf4c153ffe6644%3fs%3d75%26d%3didenticon%26r%3dg&ehk=ChBsbWFWm8pBv%2bG%2bAhbuSpNapWVlDvA4QBsJTnfELC4%3d&risl=&pid=ImgRaw&r=0" alt="사람모양" width="30%" height="30%" align="left"><br>
+          <font size="2em" color="black">&nbsp;&nbsp;이</font><br><br><br>
+
+          <i class="fa-solid fa-calendar-days"></i><font size="2em" color="gray"style="font-weight: lighter;">&nbsp;투숙일: 2022년 3월</font><br>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+
+
+        </td>
+        <td class="col2"><font size="2em" color="black">깨끗하고 위치도 좋아옹 다만 너무 커서 안내가 좀더 상세하면 좋겟어옹 그리고 이용중에 방에 있는 블라인드가 떨어졌어요.. 아기라도 있었음 엄청 위험할뻔 했어요 좀더 관리가 필요할것같아요</font><br><br><font size="2em" color="silver">작성일: 2022년 4월 2일</font><br><br>
+          <img src="https://ak-d.tripcdn.com/images/0204f2215ai7llcmb4C20_R_150_150_R5_Q70_D.jpg"width="15%" height="15%" align="left">
+          <img src="https://ak-d.tripcdn.com/images/0206e22346oxzenps48A9_R_150_150_R5_Q70_D.jpg"  width="15%" height="15%" align="left">
+          <img src="https://ak-d.tripcdn.com/images/0200c22346oxzevfkCF08_R_150_150_R5_Q70_D.jpg
+"  width="15%" height="15%" align="left">
+          
+        </td>
+    </tr>
+
+    <tr>
+        <td class="col1">
+          <img src="https://th.bing.com/th/id/R.8a68c55fbf6c2c07f33f77c62daf454d?rik=te6VIkWCfloBpg&riu=http%3a%2f%2f1.gravatar.com%2favatar%2fa95e78cd489351757caf4c153ffe6644%3fs%3d75%26d%3didenticon%26r%3dg&ehk=ChBsbWFWm8pBv%2bG%2bAhbuSpNapWVlDvA4QBsJTnfELC4%3d&risl=&pid=ImgRaw&r=0" alt="사람모양" width="30%" height="30%"align="left"><br>
+          <font size="2em" color="black">&nbsp;&nbsp;ko</font><br><br><br>
+
+          <i class="fa-solid fa-calendar-days"></i><font size="2em" color="gray"style="font-weight: lighter;">&nbsp;투숙일: 2022년 1월</font><br>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+
+
+        </td>
+        <td class="col2"><font size="2em" color="black">친구들과의 시간 행복했습니다. 여행을 못가고 호캉스로 대체했지만 오히려 알찬시간을 보냈네요 넓은 객실 시원한 뷰, 짜릿한 노을을 만끽했던 38층 포차에서의 건배까지 모처럼 코로나도 잊고 행복을 만끽했습니다.</font><br><br><font size="2em" color="silver">작성일: 2022년 1월 10일</font><br><br>
+          <img src="https://ak-d.tripcdn.com/images/0204w22159ltgwp0w06EB_R_150_150_R5_Q70_D.jpg"  width="15%" height="15%" align="left">
+          <img src="https://ak-d.tripcdn.com/images/0206522159ltgx4ghC924_R_150_150_R5_Q70_D.jpg"  width="15%" height="15%" align="left">
+
+        </td>
+    </tr>
+
+    <tr>
+        <td class="col1">
+          <img src="https://th.bing.com/th/id/R.8a68c55fbf6c2c07f33f77c62daf454d?rik=te6VIkWCfloBpg&riu=http%3a%2f%2f1.gravatar.com%2favatar%2fa95e78cd489351757caf4c153ffe6644%3fs%3d75%26d%3didenticon%26r%3dg&ehk=ChBsbWFWm8pBv%2bG%2bAhbuSpNapWVlDvA4QBsJTnfELC4%3d&risl=&pid=ImgRaw&r=0" alt="사람모양" width="30%" height="30%"align="left"><br>
+          <font size="2em" color="black">&nbsp;&nbsp;강</font><br><br><br>
+
+          <i class="fa-solid fa-calendar-days"></i><font size="2em" color="gray"style="font-weight: lighter;">&nbsp;투숙일: 2022년 2월</font><br>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+
+
+        </td>
+        <td class="col2"><font size="2em" color="black">정말 멋짐. 어머니도 만족하시네요. 개인적으로 비싸다고 느끼지만 한번쯤 즐기는 호캉스 라고 생각됩니다.</font><br><br><font size="2em" color="silver">작성일: 2022년 3월 31일</font>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="col1">
+          <img src="https://th.bing.com/th/id/R.8a68c55fbf6c2c07f33f77c62daf454d?rik=te6VIkWCfloBpg&riu=http%3a%2f%2f1.gravatar.com%2favatar%2fa95e78cd489351757caf4c153ffe6644%3fs%3d75%26d%3didenticon%26r%3dg&ehk=ChBsbWFWm8pBv%2bG%2bAhbuSpNapWVlDvA4QBsJTnfELC4%3d&risl=&pid=ImgRaw&r=0g" alt="사람모양" width="30%" height="30%"align="left"><br>
+          <font size="2em" color="black">&nbsp;&nbsp;리뷰어</font><br><br><br>
+
+          <i class="fa-solid fa-calendar-days"></i><font size="2em" color="gray"style="font-weight: lighter;">&nbsp;투숙일: 2022년 6월</font><br>
+          <span class="fa fa-star checked" style="font-size:17px;"></span>
+          <span class="fa fa-star checked" style="font-size:17px;"></span>
+          <span class="fa fa-star checked" style="font-size:17px;"></span>
+          <span class="fa fa-star checked" style="font-size:17px;"></span>
+          <span class="fa fa-star" style="font-size:17px; color: silver;"></span>
+
+
+        </td>
+        <td class="col2"><font size="2em" color="black">쇼핑센터... 시즌지난거 같은 보세 옷 넘 실망스럽고 조식도 사람몰려서 파트를 나눠 하신거 같은데 그것 때문에 퀄리티가 확 떨어져서 진짜 먹을게 없고 성의도 없었네요 칼로리 있는 음식이 한식보다 중식이 더 많다는게 충격이었어요</font><br><br><font size="2em" color="silver">작성일: 2022년 6월 8일</font>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="col1">
+          <img src="https://th.bing.com/th/id/R.8a68c55fbf6c2c07f33f77c62daf454d?rik=te6VIkWCfloBpg&riu=http%3a%2f%2f1.gravatar.com%2favatar%2fa95e78cd489351757caf4c153ffe6644%3fs%3d75%26d%3didenticon%26r%3dg&ehk=ChBsbWFWm8pBv%2bG%2bAhbuSpNapWVlDvA4QBsJTnfELC4%3d&risl=&pid=ImgRaw&r=0" alt="사람모양" width="30%" height="30%"align="left"><br>
+          <font size="2em" color="black">&nbsp;&nbsp;리뷰어</font><br><br><br>
+
+          <i class="fa-solid fa-calendar-days"></i><font size="2em" color="gray"style="font-weight: lighter;">&nbsp;투숙일: 2022년 6월</font><br>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+          <span class="fa fa-star checked"style="font-size:17px;"></span>
+
+
+        </td>
+        <td class="col2"><font size="2em" color="black">너무나 핫한 하얏트 제주 넘넘 만족스러웠어요. 역시 명불허전입니다. 다음에 또 이용하고싶네요!! 내년에 제주 가족 여행을 준비중인데 .. 그때도 이용할듯 합니다~^^</font><br><br><font size="2em" color="silver">작성일: 2022년 7월 1일</font><br><br>
+          <img src="https://ak-d.tripcdn.com/images/0206m2224rs4iq50g9CC8_R_150_150_R5_Q70_D.jpg"  width="15%" height="15%" align="left">
+          <img src="https://ak-d.tripcdn.com/images/0205p2224rs4jr0689D6F_R_150_150_R5_Q70_D.jpg"  width="15%" height="15%" align="left">
+
+        </td>
+    </tr>
+
+    </table>
+
+
+</div>
+
+   <!-- 호텔 정책 -->
+<table id="table">
+
+    <caption><h3>&nbsp;호텔 정책</h3></caption>
+    <tr>
+        <td class="col3">
+          <font size="3em" style="color: #222746;">&nbsp;&nbsp;체크인 & 체크아웃</font>
+        </td>
+        <td class="col4"><font size="2em" color="gray">체크인 15:00 이후&nbsp;&nbsp;체크아웃 11:00 이전</font>
+        </td>
+    </tr>
+    <tr>
+        <td class="col3">
+          <font size="3em" style="color: #222746;">&nbsp;&nbsp;체크인 방법</font>
+        </td>
+        <td class="col4"><font size="2em" color="gray">프런트 데스크에서 숙소 열쇠 또는 객실 카드키를 수령하세요.</font>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="col3">
+          <font size="3em" style="color: #222746;">&nbsp;&nbsp;주차장</font>
+        </td>
+        <td class="col4"><font size="2em" color="gray">사전예약 불필요 - 호텔 내 전용 주차장 이용가능 (무료 이용)<br>자동차 충전시설 이용가능<br>일반 전기차 충전소: 호텔에서 이용가능</font>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="col3">
+          <font size="3em" style="color: #222746;" >&nbsp;&nbsp;반려동물</font>
+        </td>
+        <td class="col4"><font size="2em" color="gray">반려동물 동반불가</font>
+        </td>
+    </tr>
+
+
+
+    <table id="table">
+
+    <caption><h3>&nbsp;시설 & 서비스</h3></caption>
+    <tr>
+        <td class="col3">
+          <font size="3em" style="color: #222746;">&nbsp;&nbsp;인기 시설</font>
+        </td>
+        <td class="col4"><font size="2em" color="gray">주차시설<font size="2em" color="skyblue">&nbsp;무료<br><br><font size="2em" color="gray">레스토랑<br><br>바(Bar)<br><br>스파<br><br>야외 수영장<font size="2em" color="skyblue">&nbsp;무료<br><font size="2em" color="gray"><br>어린이 식사<br><br>티룸<br><br>흡연구역<br><br>마사지룸<br><br>모닝콜 서비스 </font>
+        </td>
+        <td class="col4"><font size="2em" color="gray">자동차 충전시설<br><br>카페<br><br>회의실 (별도요금)<br><br>실내수영장<font size="2em" color="skyblue">&nbsp;무료<font size="2em" color="gray"><br><br>사우나<br><br>다목적실<br><br>짐 보관 서비스<br><br>피트니스룸<br><br>공공장소 WI-FI<font size="2em" color="skyblue">&nbsp;무료<br><br><font size="2em" color="gray">24시간 프런트 데스크 </font>
+        </td>
+    </tr>
+
+
+    
+
+
+</body>
+</html>
