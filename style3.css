@@ -1,0 +1,218 @@
+  @font-face {
+    font-family: 'Wemakeprice-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Wemakeprice-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;}
+
+/*폰트 적용*/
+*{ 
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.main{
+	
+	margin: 0%;
+	padding: 0%;
+	overflow-x: hidden;
+}
+
+
+/*헤더 수정 및 추가*/
+#header{float: right;}
+
+#header li{
+	list-style: none;
+	float: left;
+}
+
+#header a{
+	text-decoration: none;
+	line-height: 50px; color: white;display: block;
+	padding-right: 30px;
+	transition: all 0.3s;
+}
+
+#header nav a:hover{
+	color: skyblue;
+	transition: all 0.3s;
+	font-weight: 500;
+
+}
+
+#header h2 a{
+	color: white; line-height: 50px;float: left; padding-left: 15px;
+	font-family: 'Wemakeprice-Bold'; font-size: 28px;
+}
+
+#header {
+  position: fixed;
+  top: -3%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  height: 12%;
+  z-index: 9999;
+}
+
+.deactive{
+	background-color: transparent;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    -webkit-transition-duration:0.4s;
+    -webkit-transition-timing-function:ease;
+
+}
+
+.active{
+	background-color: #222746;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+  
+    -webkit-transition-duration:0.4s;
+    -webkit-transition-timing-function:ease;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+
+/*컨테이너(메인) 화면 이미지 크기 및 설정*/
+.container{
+	height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url(https://images.prestigeonline.com/wp-content/uploads/sites/6/2022/04/11125829/AdobeStock_292786948.jpg);
+    background-repeat : no-repeat;
+    background-size : cover;
+    background-position: center center;
+    position: relative;
+}
+
+
+
+.tab-content{position: relative;top: 30%;left: 4%; }
+.conbox{width: 1150px;height: 220px;background: rgba( 255, 255, 255, 0.6 );margin: 0 auto;display: none; position: absolute;}
+
+.conbox form{
+  padding: 7%;
+  top: -2%;
+  position: absolute;
+  margin: 0px;
+  font-size: 18px;
+
+
+}
+/*
+검색창의 선택창 및 날짜창 리디자인*/
+.conbox select,input{
+  width: 120px;
+  height: 45px;
+  color: black;
+  border: 1px solid #e8e8e8;
+  margin: 3px;
+  vertical-align: middle;
+}
+
+/*검색 버튼 크기 및 위치 조정*/
+.btn{
+  background-color: #f8f8f8;
+    color: #355C7D;
+    border: 1px solid #e8e8e8;
+    font-size: 17px;
+    letter-spacing: 0px;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 0px;
+    transition: all 0.4s;   
+    vertical-align: middle; 
+}
+
+/*검색 버튼 호버시 애니메이션*/
+.btn:hover{
+  background: #222746;
+  border: 1px solid #222746;
+    color: white;
+    transition: all 0.4s;
+}
+
+
+
+
+
+/*소제목*/
+.subtitle{
+	font-size:18px;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*세부내용*/
+.click{
+	font-size: 12px;
+	margin-top: 0.2em;
+}
+
+/*푸터 크기 설정*/
+#footer{
+	border-top: 1px solid #eee;
+  background-color: #222746;
+	padding: 40px 0 30px 0;
+	width: 100%; height: 130px;
+	display: inline-block;
+}
+
+/*푸터 카테고리 재배치*/
+.footer{
+	padding: 50px 0; text-align: center;
+	display: inline;
+}
+
+/*카테고리 색상 및 설정*/
+.footer li{
+	position: relative;
+	display: inline-block;
+	padding: 0 7px 0 10px;
+	font-size: 13px;
+}
+
+li>a{
+	text-decoration-line: none;
+	color: white;
+}
+
+/*푸터 카테고리 구분선*/
+.footer li:before{
+	content: ''; width: 1px; height: 12px; background: #6c7e8a;
+	position: absolute; left: 0; top: 2px;
+}
+
+/*푸터 카테고리 구분선들 중 맨 좌측에 있는 구분선은 삭제*/
+.footer li:first-child:before{width: 0; height: 0;}
+
+/*주소 사이즈 및 색상 */
+address{
+	font-size: 10px;
+	font-style: normal;
+	color: #cacdcc;
+}
+
+/*브랜드 로고 아이콘 크기 및 색상*/
+div>ul>a{
+	display: inline-block;
+	padding: 0 2px 0 2px;
+	color: #cacdcc;
+	font-size: 15px;
+}
+
+/*브랜드 로고 아이콘 정렬*/
+#footer>ul{
+	text-align: center;
+}
+
+
+
+

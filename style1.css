@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@400;500&display=swap');
+@font-face {
+font-family: 'GangwonEduSaeeum_OTFMediumA';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduSaeeum_OTFMediumA.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: 'InfinitySans-BoldA1';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-BoldA1.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: 'InfinitySans-RegularA1';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: 'SUIT-Bold';
+src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Bold.woff2') format('woff2');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+    font-family: 'Wemakeprice-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Wemakeprice-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;}
+
+/*폰트 적용*/
+*{ 
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/*div 설정*/
+.section1{
+    height:auto; width: 100%; float: left; 
+}
+
+#font1{ font-family: 'Noto Sans KR', sans-serif; }
+#font2{ font-family: 'Noto Sans KR', bold; }
+#font3{  color: #E56951; font-size: 20px; font-weight: 500; margin-left: 3px;}
+
+/*div 설정*/
+.A1{display: inline-block; margin: 14px; margin-right: 16px; width : 270px; height : 310px; overflow: hidden; }
+.A2{display: inline-block; margin: 14px; margin-right: 16px; width : 270px; height : 270px; overflow: hidden; }
+
+/*형식 설정*/
+.lar1{font-size:33px; font-weight: 500; margin-top: 15%; margin-bottom: 6%; position:relative;  display: block; text-align: center; }
+.lar2{background-position: center; text-align: center;}
+
+
+/* body 여행지 지역 선택 버튼 형태 설정*/
+.btn1{ border-radius: 5px; margin-left: 15px; margin-bottom: 10px;   border: 1px solid skyblue; background-color: white; color: skyblue;}
+
+/* body 여행지 지역 선택 버튼 세부 설정*/
+#group button{
+   
+    padding: 3px;
+    width: 100px;
+    height: 50px;
+    font-family: 'SUIT-Bold';
+    font-size: 18px;
+}
+
+/* body 여행지 지역 선택 버튼 효과*/
+#group button:hover{
+
+    background-color: skyblue;
+    color: white;
+    transition: all .6s;
+   
+}
+
+
+#group button:focus, .clickedbtn{
+    border-radius: 5px; margin-left: 15px; margin-bottom: 10px;
+    border: 1px solid #222746;
+    background-color: #222746;
+    color: white;
+    outline: none;
+}
+
+/*말풍선 설정(리뷰 란에서 사용)*/
+
+.balloon-left {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+    padding: 7px 13px;
+    width: 180px;
+    height: 50px;
+    color: #FFF;
+    font-size: 14px;
+    background: skyblue;
+    border-radius: 5px;
+    word-break:break-all;
+    text-align: center;
+  
+    
+  }
+  
+  
+  .balloon-left:after {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: -25px;
+    margin-top: -10px;
+    border: 14px solid transparent;
+    border-right: 16px solid skyblue;
+    z-index: 1;
+  }

@@ -1,0 +1,28 @@
+/*별점 구현*/
+.star-ratings {
+    color:grey; 
+    position: relative;
+    unicode-bidi: bidi-override;
+    width: max-content; 
+    display: inline-block;
+    
+    -webkit-text-stroke-color: grey; 
+  }
+.star-ratings-fill {
+    color: gold;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+   
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    
+  }
+   
+  .star-ratings-base {
+    z-index: 0;
+    padding: 0;
+  }
+  
+  .star-ratings span{  padding-right: 2px; font-size:18px ; }
